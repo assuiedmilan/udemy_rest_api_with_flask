@@ -1,0 +1,39 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "rest_api_with_flask"
+version = "1.0.0"
+description = "https://www.udemy.com/course/rest-api-flask-and-python"
+authors = ["Milan Assuied <Milan.assuied@gmail.com>"]
+packages = [
+    { include = "rest_api_with_flask", from = "src" },
+]
+
+[[tool.poetry.source]]
+name = "unity-internal"
+url = "https://artifactory.prd.it.unity3d.com/artifactory/api/pypi/pypi/simple"
+priority = "default"
+
+[tool.poetry.scripts]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.32.3"
+Flask = "^3.0"
+
+[tool.poetry.dev-dependencies]
+pylint = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-lazy-fixture = "*"
+pytest-mock = "*"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -v --junitxml=results.xml"
+testpaths = [
+    "tests",
+]
+junit_logging = "all"
