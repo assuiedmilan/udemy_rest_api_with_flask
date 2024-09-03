@@ -16,8 +16,6 @@ name = "unity-internal"
 url = "https://artifactory.prd.it.unity3d.com/artifactory/api/pypi/pypi/simple"
 priority = "default"
 
-[tool.poetry.scripts]
-
 [tool.poetry.dependencies]
 python = "^3.11"
 requests = "^2.32.3"
