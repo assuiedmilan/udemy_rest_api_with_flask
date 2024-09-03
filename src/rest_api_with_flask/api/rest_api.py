@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import request
 
 
 class RestApi:
@@ -17,3 +18,8 @@ class RestApi:
     def rest_app() -> Flask:
         """Get the Flask application instance"""
         return RestApi._rest_app
+
+    @staticmethod
+    def request_json() -> dict:
+        """Get the JSON data from the request"""
+        return request.get_json()
